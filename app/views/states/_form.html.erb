@@ -11,17 +11,17 @@
         </div>
     <% end %>
 
-    <div>
-      <%= f.label "Doctor Count" %>
-      <%= f.text_field :doctor_count %>
+    <div class="row-fluid">
+      <%= f.label :doctor_count, "Doctor count", class: "span2" %>
+      <%= f.text_field :doctor_count, class: "span2" %>
     </div>
 
-    <div>
-      <%= f.label "Nurse Count" %>
-      <%= f.text_field :nurse_count %>
+    <div class="row-fluid">
+      <%= f.label :nurse_count, "Nurse Count", class: "span2" %>
+      <%= f.text_field :nurse_count, class: "span2" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", class: "btn" %>
     </div>
 <% end %>
