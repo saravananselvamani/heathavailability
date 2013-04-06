@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20130406185252) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "doctor_count"
+    t.integer  "nurse_count"
   end
 
 end
