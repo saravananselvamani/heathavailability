@@ -10,7 +10,7 @@ class Scraper
   key :district_code
 
   def self.scrap_all
-  	(0...30).to_a.each_with_index do |index|
+  	(1..count).to_a.each_with_index do |index|
   		population_data = find_by_index index
   		next if population_data.state_code.to_i == 0 || population_data.district_code.to_i == 0
   		create_state population_data
