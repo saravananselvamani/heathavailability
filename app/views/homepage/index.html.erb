@@ -1,6 +1,6 @@
 <script type="text/javascript">
-    var doctorsData =<%= raw State.all.collect(&:map_data).to_json %>;
-    var nursesData =<%= raw State.all.collect(&:map_data).to_json %>;
+    var doctorsData =<%= raw State.all.collect(&:doctors_data).to_json %>;
+    var nursesData =<%= raw State.all.collect(&:nurses_data).to_json %>;
 </script>
 
 <ul class="nav nav-tabs">

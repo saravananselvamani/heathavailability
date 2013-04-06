@@ -1,6 +1,4 @@
 class State < ActiveRecord::Base
-  has_many :doctors
-  has_many :nurses
 
   def population
     Population.select("sum(population) as population").where(state_code: id).first.population
@@ -16,8 +14,13 @@ class State < ActiveRecord::Base
     (nurse_count || 0) / population_in_lakhs
   end
 
-  def map_data
+  def doctors_data
     [self.name, self.number_of_doctors_per_lakh_population,
-     "Population - #{population}, Number of doctors - #{number_of_doctors}, Number of doctors per lakh population - #{number_of_doctors_per_lakh_population}"]
+     "Population - #{population}, Number of doctors - #{doctor_count}, Number of doctors per lakh population - #{number_of_doctors_per_lakh_population}"]
+  end
+
+  def nurses_data
+    [self.name, self.number_of_nurses_per_lakh_population,
+     "Population - #{population}, Number of doctors - #{nurse_count}, Number of nurses per lakh population - #{number_of_nurses_per_lakh_population}"]
   end
 end
