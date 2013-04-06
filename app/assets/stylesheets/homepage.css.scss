@@ -14,7 +14,19 @@
   clear: both;
 }
 
-.width_100 {
+.description {
   width: 400px;
   padding: 0 10px 10px;
+
+  div.bullet {
+    margin: 5px 0;
+    font-style: italic;
+
+    b {
+      margin-right: 2px;
+    }
+  }
+
+
+
 }

@@ -1,21 +1,33 @@
 <table class="current" style="display:none;">
-	<% State.all.each do |state| %>
-	  <tr>
-	  	<td><%= state.name %></td>
-	  	<td> <%=state.id %></td>
-	  	<td> <%=state.population%></td>
-	  </tr>
-	<%end%>
+  <% State.all.each do |state| %>
+      <tr>
+        <td><%= state.name %></td>
+        <td> <%= state.id %></td>
+        <td> <%= state.population %></td>
+      </tr>
+  <% end %>
 </table>
 
 <div id='map_canvas' class="left"></div>
-<div class="left width_100">
+<div class="description left">
   <h2>Planning Commission Of India</h2>
-  <i>Health should be viewed as not merely the absence of disease but as a state of complete physical, mental and social well-being</i>
-  <br/>
-  <br/>
-  <br/>
-  <i>Availability of health care services from the public and private sectors taken together is quantita- tively inadequate. This is starkly evident from the data on doctors or nurses per lakh of the popula- tion. At the start of the Eleventh Plan, the num- ber of doctors per lakh of population was only 45, whereas, the desirable number is 85 per lakh population. Similarly, the number of Nurses and
-  Auxiliary Nurse and Midwifes (ANMs) avail- able was only 75 per lakh population whereas the desirable number is 255. The overall shortage is exacerbated by a wide geographical variation in availability across the country. Rural areas are especially poorly served.</i>
+
+  <div>
+    Health should be viewed as not merely the absence of disease but as a state of complete physical, mental and
+    social well-being
+  </div>
+  <div class="bullet">
+    <b>1.</b>At the start of the Eleventh Plan, the number of doctors per lakh of population was only 45, whereas, the
+    desirable number is 85 per lakh population.
+  </div>
+  <div class="bullet">
+    <b>2.</b>Similarly, the number of Nurses and Auxiliary Nurse and Midwifes (ANMs) available was only 75 per lakh
+    population whereas the desirable number is 255.
+  </div>
+
+  <div>
+    <h3>The overall shortage is exacerbated by a wide geographical variation in availability across the country. Rural
+      areas are especially poorly served.</h3>
+  </div>
 </div>
 <div class="clear"></div>
