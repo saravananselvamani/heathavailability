@@ -4,6 +4,10 @@
 
 #content {
   margin: 0 auto;
+
+  .tab-content {
+    overflow: visible;
+  }
 }
 
 .left {
@@ -28,10 +32,6 @@
   }
 }
 
-
-.map-data {
-  display: none;
-}
 .form{
   float:left;
 }

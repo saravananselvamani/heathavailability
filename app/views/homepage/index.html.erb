@@ -1,46 +1,19 @@
-<table class="current map-data">
-  <tr>
-    <td>State</td>
-    <td>Number of doctors per lakh population</td>
-  </tr>
-  <% State.all.each do |state| %>
-      <tr>
-        <td><%= state.name %></td>
-        <td><%= state.number_of_doctors_per_lakh_population %></td>
-      </tr>
-  <% end %>
-</table>
+<script type="text/javascript">
+    var doctorsData =<%= raw State.all.collect(&:map_data).to_json %>;
+    var nursesData =<%= raw State.all.collect(&:map_data).to_json %>;
+</script>
 
-<div id='map_canvas' class="left"></div>
-<div class="description left">
-  <h2>Excerpt From "Planning Commission Of India"</h2>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#doctors" data-toggle="tab">Doctors</a></li>
+  <li><a href="#nurses" data-toggle="tab">Nurses</a></li>
+</ul>
 
-  <div>
-    Health should be viewed as not merely the absence of disease but as a state of complete physical, mental and
-    social well-being
-  </div>
-  <div class="bullet">
-    <b>1.</b>At the start of the Eleventh Plan, the number of doctors per lakh of population was only 45, whereas, the
-    desirable number is 85 per lakh population.
-  </div>
-  <div class="bullet">
-    <b>2.</b>Similarly, the number of Nurses and Auxiliary Nurse and Midwifes (ANMs) available was only 75 per lakh
-    population whereas the desirable number is 255.
+<div class="tab-content">
+  <div class="tab-pane active" id="doctors">
+    <%= render "doctor_map" %>
   </div>
 
-  <div>
-    <h4>...The overall shortage is exacerbated by a wide geographical variation in availability across the country.
-      Rural
-      areas are especially poorly served.</h4>
+  <div class="tab-pane" id="nurses">
+    <%= render "nurses_map" %>
   </div>
 </div>
-<div class="form">
-  <form action="/add_details" method="POST">
-    Number of doctors: <input type="text" name="doctor_count"/> <br/>
-    Number of nurses : <input type="text" name="nurse_count" /> <br/>
-    <input type="hidden" name="state_code"/>
-    <input type="hidden" name="district_code"/>
-    <input type="submit" value="Add"/>
-  </form>
-</div>
-<div class="clear"></div>

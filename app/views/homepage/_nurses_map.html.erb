@@ -1,0 +1,34 @@
+<div id='nurses_map_canvas' class="left"></div>
+
+<div class="description left">
+  <h2>Excerpt From "Planning Commission Of India"</h2>
+
+  <div>
+    Health should be viewed as not merely the absence of disease but as a state of complete physical, mental and
+    social well-being
+  </div>
+  <div class="bullet">
+    <b>1.</b>At the start of the Eleventh Plan, the number of doctors per lakh of population was only 45, whereas, the
+    desirable number is 85 per lakh population.
+  </div>
+  <div class="bullet">
+    <b>2.</b><b>Similarly, the number of Nurses and Auxiliary Nurse and Midwifes (ANMs) available was only 75 per lakh
+    population whereas the desirable number is 255.</b>
+  </div>
+
+  <div>
+    <h5>...The overall shortage is exacerbated by a wide geographical variation in availability across the country.
+      Rural
+      areas are especially poorly served.</h5>
+  </div>
+</div>
+<div class="form">
+  <form action="/add_details" method="POST">
+    Number of doctors: <input type="text" name="doctor_count"/> <br/>
+    Number of nurses : <input type="text" name="nurse_count"/> <br/>
+    <input type="hidden" name="state_code"/>
+    <input type="hidden" name="district_code"/>
+    <input type="submit" value="Add"/>
+  </form>
+</div>
+<div class="clear"></div>

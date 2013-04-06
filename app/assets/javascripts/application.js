@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require twitter/bootstrap/tab
 //= require charts
 //= require form
