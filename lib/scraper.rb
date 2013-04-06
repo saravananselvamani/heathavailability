@@ -22,16 +22,16 @@ class Scraper
   private
 
   def self.create_state population_data
-  	State.where(id: population_data.state_code.to_i, name: population_data.state_name).first_or_create
+  	::State.where(id: population_data.state_code.to_i, name: population_data.state_name).first_or_create
   end
 
   def self.create_district population_data
-  	District.where(district_id: population_data.district_code.to_i, name: population_data.district_name, state_id: population_data.state_code.to_i).first_or_create
+  	::District.where(district_id: population_data.district_code.to_i, name: population_data.district_name, state_id: population_data.state_code.to_i).first_or_create
   end
  
   def self.create_population_data population_data
-  	Population.create(state_code: population_data.state_code, district_code: population_data.district_code, 
-  		              population: population_data.total_population)
+  	::Population.where(state_code: population_data.state_code, district_code: population_data.district_code, 
+  		              population: population_data.total_population).first_or_create
   end
   
 end
