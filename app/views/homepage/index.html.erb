@@ -3,6 +3,8 @@
     var nursesData =<%= raw State.all.collect(&:nurses_data).to_json %>;
 </script>
 
+<%= link_to "Edit State Info", states_path, class: "pull-right" %>
+
 <ul class="nav nav-tabs">
   <li class="active"><a href="#doctors" data-toggle="tab">Doctors</a></li>
   <li><a href="#nurses" data-toggle="tab">Nurses</a></li>
