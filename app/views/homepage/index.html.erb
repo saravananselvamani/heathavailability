@@ -1,12 +1,12 @@
 <table class="current map-data">
   <tr>
     <td>State</td>
-    <td>Population</td>
+    <td>Number of doctors per lakh population</td>
   </tr>
   <% State.all.each do |state| %>
       <tr>
         <td><%= state.name %></td>
-        <td><%= state.population %></td>
+        <td><%= state.number_of_doctors_per_lakh_population %></td>
       </tr>
   <% end %>
 </table>
