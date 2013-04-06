@@ -29,11 +29,6 @@ function drawDoctorsMap() {
     container = document.getElementById('doctor_map_canvas');
     chart = new google.visualization.GeoChart(container);
     chart.draw(data, options);
-    google.visualization.events.addListener(chart, 'select', function () {
-        data = {}
-        data.state_code = chart.getSelection()[0].row
-        onRegionSelect(data)
-    });
 }
 
 function drawNursesMap() {
@@ -57,10 +52,4 @@ function drawNursesMap() {
     container = document.getElementById('nurses_map_canvas');
     chart = new google.visualization.GeoChart(container);
     chart.draw(data, options);
-    google.visualization.events.addListener(chart, 'select', function () {
-        data = {}
-        data.state_code = chart.getSelection()[0].row
-        onRegionSelect(data)
-    });
-
 }

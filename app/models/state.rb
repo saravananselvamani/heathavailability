@@ -16,11 +16,11 @@ class State < ActiveRecord::Base
 
   def doctors_data
     [self.name, self.number_of_doctors_per_lakh_population,
-     "Population - #{population}, Number of doctors - #{doctor_count}, Number of doctors per lakh population - #{number_of_doctors_per_lakh_population}"]
+     "Population - #{population}, Number of doctors - #{doctor_count || 0}, Number of doctors per lakh population - #{number_of_doctors_per_lakh_population}"]
   end
 
   def nurses_data
     [self.name, self.number_of_nurses_per_lakh_population,
-     "Population - #{population}, Number of doctors - #{nurse_count}, Number of nurses per lakh population - #{number_of_nurses_per_lakh_population}"]
+     "Population - #{population}, Number of nurses - #{nurse_count || 0}, Number of nurses per lakh population - #{number_of_nurses_per_lakh_population}"]
   end
 end
