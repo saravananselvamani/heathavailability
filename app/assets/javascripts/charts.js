@@ -27,8 +27,10 @@ function drawIndiaMap() {
     var container2 = document.getElementById('map_canvas');
     geomap2 = new google.visualization.GeoMap(container2);
     geomap2.draw(data2, options);
-//    google.visualization.events.addListener(geomap2, 'select', function(){
-//        alert("hi");
-//    });
+    google.visualization.events.addListener(geomap2, 'select', function(){
+        data = {}
+        data.state_code = geomap2.getSelection()[0].row
+        onRegionSelect(data)
+          });
 
 }
