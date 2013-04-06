@@ -1,1 +1,10 @@
+<table class="current" style="display:none;">
+	<% State.all.each do |state| %>
+	  <tr>
+	  	<td><%= state.name %></td>
+	  	<td> <%=state.id %></td>
+	  	<td> <%=state.population%></td>
+	  </tr>
+	<%end%>
+</table>
 <div id='map_canvas'></div>
