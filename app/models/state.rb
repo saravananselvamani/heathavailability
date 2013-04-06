@@ -8,11 +8,11 @@ class State < ActiveRecord::Base
 
   def number_of_doctors_per_lakh_population
     population_in_lakhs = (population / 100000.0)
-    doctor_count / population_in_lakhs
+    (doctor_count || 0) / population_in_lakhs
   end
 
   def number_of_nurses_per_lakh_population
     population_in_lakhs = (population / 100000.0)
-    nurse_count / population_in_lakhs
+    (nurse_count || 0) / population_in_lakhs
   end
 end
