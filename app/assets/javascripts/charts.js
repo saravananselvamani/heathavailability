@@ -3,6 +3,8 @@
 google.load('visualization', '1', {'packages': ['geomap']});
 google.setOnLoadCallback(drawIndiaMap);
 
+var geomap2;
+
 function drawIndiaMap() {
     var data2 = new google.visualization.DataTable();
 
@@ -127,8 +129,13 @@ function drawIndiaMap() {
     options['width'] = '800px';
     options['height'] = '800px';
     options['dataMode'] = 'regions';
+    options['colors'] = [0xFF0000, 0x00FF00]
 
     var container2 = document.getElementById('map_canvas');
-    var geomap2 = new google.visualization.GeoMap(container2);
-    geomap2.draw(data2, options)
+    geomap2 = new google.visualization.GeoMap(container2);
+    geomap2.draw(data2, options);
+//    google.visualization.events.addListener(geomap2, 'select', function(){
+//        alert("hi");
+//    });
+
 }
