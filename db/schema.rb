@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130406185252) do
+ActiveRecord::Schema.define(version: 20130407051503) do
 
   create_table "districts", force: true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20130406185252) do
     t.datetime "updated_at"
     t.integer  "doctor_count"
     t.integer  "nurse_count"
+    t.integer  "vaccinations_count"
   end
 
 end

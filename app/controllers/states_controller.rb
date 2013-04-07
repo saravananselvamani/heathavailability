@@ -53,6 +53,6 @@ class StatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def state_params
-      params.permit({:state => [:doctor_count, :nurse_count]})[:state]
+      params.permit({:state => [:doctor_count, :nurse_count, :vaccinations_count]})[:state]
     end
 end

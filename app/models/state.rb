@@ -14,6 +14,10 @@ class State < ActiveRecord::Base
     (nurse_count || 0) / population_in_lakhs
   end
 
+  def vaccinations_scarcity
+    (population - (vaccinations_count || 0) ) * 100 / population
+  end
+
   def doctors_data
     [self.name, self.number_of_doctors_per_lakh_population,
      "Population - #{population}, Number of doctors - #{doctor_count || 0}, Number of doctors per lakh population - #{number_of_doctors_per_lakh_population}"]
@@ -22,5 +26,10 @@ class State < ActiveRecord::Base
   def nurses_data
     [self.name, self.number_of_nurses_per_lakh_population,
      "Population - #{population}, Number of nurses - #{nurse_count || 0}, Number of nurses per lakh population - #{number_of_nurses_per_lakh_population}"]
+  end
+
+  def vaccinations_data
+    [self.name, self.vaccinations_scarcity,
+     "Population - #{population}, Number of vaccinations - #{vaccinations_count || 0}, Scarcity - #{vaccinations_scarcity}%"]
   end
 end

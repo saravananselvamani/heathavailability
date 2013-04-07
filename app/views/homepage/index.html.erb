@@ -1,6 +1,7 @@
 <script type="text/javascript">
     var doctorsData =<%= raw State.all.collect(&:doctors_data).to_json %>;
     var nursesData =<%= raw State.all.collect(&:nurses_data).to_json %>;
+    var vaccinationsData =<%= raw State.all.collect(&:vaccinations_data).to_json %>;
 </script>
 
 <%= link_to "Edit State Info", states_path, class: "pull-right" %>
@@ -8,6 +9,7 @@
 <ul class="nav nav-tabs">
   <li class="active"><a href="#doctors" data-toggle="tab">Doctors</a></li>
   <li><a href="#nurses" data-toggle="tab">Nurses</a></li>
+  <li><a href="#vaccination" data-toggle="tab">Vaccination Program</a></li>
 </ul>
 
 <div class="tab-content">
@@ -17,5 +19,9 @@
 
   <div class="tab-pane" id="nurses">
     <%= render "nurses_map" %>
+  </div>
+
+  <div class="tab-pane" id="vaccination">
+    <%= render "vaccination_map" %>
   </div>
 </div>

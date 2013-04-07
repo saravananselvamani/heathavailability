@@ -6,6 +6,7 @@ google.setOnLoadCallback(drawIndiaMap);
 function drawIndiaMap() {
     drawDoctorsMap();
     drawNursesMap();
+    drawVaccinationsMap();
 }
 
 function drawDoctorsMap() {
@@ -50,6 +51,29 @@ function drawNursesMap() {
     };
 
     container = document.getElementById('nurses_map_canvas');
+    chart = new google.visualization.GeoChart(container);
+    chart.draw(data, options);
+}
+
+function drawVaccinationsMap() {
+    var data, options, container, chart;
+    data = new google.visualization.DataTable();
+
+    data.addColumn('string', 'State');
+    data.addColumn('number', 'Scarcity');
+    data.addColumn({type: 'string', role: 'tooltip'});
+    data.addRows(vaccinationsData);
+
+    options = {
+        displayMode: 'regions',
+        resolution: 'provinces',
+        region: 'IN',
+        width: 900,
+        colorAxis: {minValue: 0, maxValue: 100, colors: ['green', 'red']},
+        tooltip: {textStyle: {color: '#444444'}}
+    };
+
+    container = document.getElementById('vaccination_map_canvas');
     chart = new google.visualization.GeoChart(container);
     chart.draw(data, options);
 }
